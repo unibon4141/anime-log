@@ -42,13 +42,14 @@ if(!empty($_POST)){
       $errMsg['email'] = MSG02;
     }
     if(mb_strlen($pass) < 6  || mb_strlen($pass) > 12){
-      $errMsg['pass']  = MSG03;
+      $errMsg ['pass']  = MSG03;
     }
     if(empty($errMsg)){
       debug('バリデーションOKです。');
       try{
         // DB接続
-    $dsn = 'mysql:host=localhost;dbname=users;charset=utf8';
+    $dsn = 'mysql:host=localhost:3308;dbname=anime_log;charset=utf8';
+
     $username = 'root';
     $password = 'root';
     $options = array(
@@ -58,6 +59,16 @@ if(!empty($_POST)){
     );
 
     $dbh = new PDO($dsn, $username, $password, $options);
+
+    $stmt = $dbh->prepare('INSERT INTO users (email, password, created_at) VALUES (:email, :password, :created_at)');
+    $result = $stmt->execute(
+      array(
+        ':email' => $email,
+        ':password' => $pass,
+        ':created_at' => date('Y-m-d'),
+      )
+
+      );
   } catch (PDOException $e){
     error_log($e->getMessage());
   }
