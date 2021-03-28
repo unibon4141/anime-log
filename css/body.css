@@ -1,0 +1,50 @@
+/* 共通するスタイル */
+
+#main{
+  background-color:	#fcf4ed;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+h1, h3{
+  color:	#804000;
+}
+.anime-list{
+  overflow: hidden;
+}
+
+.anime{
+  box-sizing: border-box;
+  width: 23%;
+  height:150px;
+  margin: 8px;
+  float:left;
+  background-color:#fff ;
+  list-style:none;
+  position:relative;
+  padding: 10px;
+}
+
+.anime-title{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+#main{
+  min-height: 800px;
+}
+.myanime-add{
+  display: block;
+  position:absolute;
+  bottom:20px;
+  left:30px;
+  border:3px solid #ffaaaa;
+  color:		#e27272;
+  padding:10px;
+  background-color: #fff;
+  outline:none;
+}
+.myanime-add:hover{
+  color:#fff;
+  background-color:	#ffaaaa;
+}

@@ -1,0 +1,32 @@
+.myanime-item{
+  box-sizing: border-box;
+  width: 23%;
+  height:150px;
+  margin: 8px;
+  float:left;
+  background-color:#fff ;
+  list-style:none;
+  position:relative;
+  padding: 10px;
+  position:relative;
+}
+
+.status-form{
+  position:absolute;
+  bottom:20px;
+  left:35px;
+}
+
+.status-form select {
+  color:	#ffaa55;
+  border:1px solid 	#ffaa55;
+}
+
+.status-form input[type="submit"]{
+  color:	#ffaa55;
+  border:1px solid	#ffaa55;
+  background:	#fff;
+}
+
+
+

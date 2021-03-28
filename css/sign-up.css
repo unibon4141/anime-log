@@ -13,3 +13,6 @@ body, div, p, h1, h2, ul {
   width:300px;
   margin: 0 auto;
 }
+.error-msg{
+  color:	#ff0000;
+}

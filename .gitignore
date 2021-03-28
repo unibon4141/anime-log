@@ -1,0 +1,5 @@
+/log/
+/vendor/
+/composer.json/
+/composer.lock/
+/*composer*/

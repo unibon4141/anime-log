@@ -7,9 +7,14 @@ body, div, p, h1, h2, ul {
  header .container{
    overflow:hidden;
   margin: 0 auto;
+
  }
  .container{
    width:960px;
+   margin: 0 auto;
+ }
+ .header-top{
+   overflow: hidden;
  }
   img{
     display:block;
@@ -22,31 +27,60 @@ body, div, p, h1, h2, ul {
   }
 
   .start{
-    box-sizing: border-box;
     overflow: hidden;
-    width: 660px;
-    height:50%;
-    padding-top: 20px;
+    margin-top:30px;
+    float:right;
   }
   .start-list{
     overflow: hidden;
-    float:right;
   }
   .start-list li{
     float:left;
     list-style:none;
+    margin-right: 10px;
+
+  }
+
+  .start-list .hidden{
+    display:none;
+  }
+
+  .start-list li a{
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    border:2px solid orange;
+    color:orange;
+    
+  }
+  .start-list li a:hover{
+    background-color: orange;
+    color:#fff;
+  }
+  nav{
+    margin-right:auto;
+    margin-left: auto;
   }
   .header-nav-list{
     overflow: hidden;
   }
   .header-nav-list li{
+    box-sizing: border-box;
+
     float:left;
     list-style:none;
+    width:33%;
   }
-  nav{
-    /* border:1px solid black; */
-    box-sizing: border-box;
-    width: 660px;
-    height:50%;
 
+  .header-nav-list li a{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color:#fff ;
+    display: block;
+    background-color:		#ff952b;
+  }
+
+  .header-nav-list li:hover{
+    opacity: 0.7;
   }

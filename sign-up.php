@@ -2,17 +2,8 @@
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 //  ユーザー登録ページ
 // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-// エラーログを表示する
-ini_set('log_errors', 'on');
-//エラーレベルを設定
-ini_set('error_reporting', E_ALL);
-// ログをファイルに保存
-ini_set('error_log', 'php.log');
+include('function.php');
 
-// ログを出力
-function debug($str) {
-  error_log($str);
-}
 
 // POST送信はされているか
 if(!empty($_POST)){
@@ -23,63 +14,53 @@ if(!empty($_POST)){
   $email = $_POST['email'];
   $pass = $_POST['pass'];
 
-  $errMsg = array();
-
-  define('MSG01','入力必須です。');
-  define('MSG02','メールアドレスを正しく入力してください。');
-  define('MSG03','パスワードは6文字以上12文字以内で入力してください。');
-  // バリデーションチェック
   
-  if(empty($email)){
-    $errMsg['email'] = MSG01;
-  }
-  if(empty($pass)){
-    $errMsg['pass'] = MSG01;
-  }
+  // バリデーションチェック
 
-  if(empty($errMsg)){
-    if(!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\?\*\[|\]%'=~^\{\}\/\+!#&\$\._-])*@([a-zA-Z0-9_-])+\.([a-zA-Z0-9\._-]+)+$/",$email)){
-      $errMsg['email'] = MSG02;
-    }
-    if(mb_strlen($pass) < 6  || mb_strlen($pass) > 12){
-      $errMsg ['pass']  = MSG03;
-    }
+  // 未入力チェック
+  requireValid($email, 'email');
+  requireValid($pass, 'pass');
+
+if(empty($errMsg)){
+
+// メールアドレス形式チェック
+  emailFormatValid($email, 'email');
+
+// パスワード文字数チェック
+  strLenValid($pass, 'pass');
+
+  // メールアドレス重複チェック
+   emailValidDup($email);
+
     if(empty($errMsg)){
       debug('バリデーションOKです。');
-      try{
+      // パスワードをハッシュ化する
+      $hash_path = password_hash($pass, PASSWORD_DEFAULT);
+      // 例外処理
+    try{
         // DB接続
-    $dsn = 'mysql:host=localhost:3308;dbname=anime_log;charset=utf8';
-
-    $username = 'root';
-    $password = 'root';
-    $options = array(
-      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-      // エミュレートをオフにして静的プレースホルダを使う
-      PDO::ATTR_EMULATE_PREPARES => false,
+    $dbh = dbConnect();
+    $sql = 'INSERT INTO users (email, password, created_at) VALUES (:email, :password, :created_at)';
+    $data = array(
+      array(':email',$email, PDO::PARAM_STR),
+      array(':password', $hash_path, PDO::PARAM_STR),
+      array(':created_at', date('Y-m-d'), PDO::PARAM_STR),
     );
+    $stmt = queryPost($dbh, $sql, $data);
 
-    $dbh = new PDO($dsn, $username, $password, $options);
 
-    $stmt = $dbh->prepare('INSERT INTO users (email, password, created_at) VALUES (:email, :password, :created_at)');
-    $result = $stmt->execute(
-      array(
-        ':email' => $email,
-        ':password' => $pass,
-        ':created_at' => date('Y-m-d'),
-      )
 
-      );
+    $_SESSION['user_id'] = $dbh->lastInsertId();
+    debug('last:'.$dbh->lastInsertId());
+    $_SESSION['login_time'] = time();
+    debug('セッション情報：'.print_r($_SESSION, true));
+    //トップページへ遷移する
+    header('Location:index.php');
   } catch (PDOException $e){
     error_log($e->getMessage());
   }
-    }
-
-  
+    }  
   }  
-
-    debug('エラー内容:'.print_r($errMsg, true));
-  
-  
 }
 
 
@@ -106,10 +87,13 @@ if(!empty($_POST)){
     <form action="" method="post">
       <label>メールアドレス</label>
       <input type="text" name="email" placeholder="XXX@YYY.com"><br>
+      <p class="error-msg"><?php if(!empty($errMsg['email'])) echo '※'.$errMsg['email']; ?></p>
       <label>パスワード</label>
       <input type="password" name="pass" placeholder="6文字以上12文字以内"><br>
+      <p class="error-msg"><?php if(!empty($errMsg['pass'])) echo '※'.$errMsg['pass']; ?></p>
       <input type="submit" value="登録">
     </form>
+    <a href="index.php">トップページへ戻る</a>
   </main>
 </body>
 </html>
