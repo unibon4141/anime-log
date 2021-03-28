@@ -4,11 +4,6 @@
 // ==========================
 include('function.php');
 
-
-$loginFlg = isLogin();
-
-
-
 $year = date('Y');
 $month = date('n');
 $shown_season = '';
@@ -65,7 +60,7 @@ if($month >= 1 && $month <4){
         ?>
         </p>
         
-        <button class="<?php if(isLogin()) echo 'myanime-add'; ?>" data-title = "<?php echo $anime->title; ?>">
+        <button class="add-button <?php if(isLogin()) echo 'myanime-add'; ?>" data-title = "<?php echo $anime->title; ?>">
 マイアニメに登録する</button>
         </li>
         <?php

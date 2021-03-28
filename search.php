@@ -7,8 +7,6 @@ debug('アニメ検索ページ');
 $current_year = date('Y');
 $oldest_year = 2014;
 
-$loginFlg = isLogin();
-
 if(!empty($_POST)){
   debug('POST送信があります');
   debug('POST内容：'.print_r($_POST, true));
@@ -70,7 +68,7 @@ if(!empty($_POST)){
       ?>
       <li class="anime">
         <p class="anime-title"><?php echo $anime->title; ?></p>
-        <button class="myanime-add" data-title = "<?php echo sanitize($anime->title); ?>">
+        <button class="add-button <?php if(isLogin()) echo 'myanime-add'; ?>" data-title = "<?php echo sanitize($anime->title); ?>">
 マイアニメに登録する</button>
       </li>
       <?php

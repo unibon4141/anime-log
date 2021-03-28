@@ -22,8 +22,8 @@ $errMsg = array();
   define('MSG03','パスワードは6文字以上12文字以内で入力してください。');
   define('MSG04', '既に使用されているメールアドレスです。');
   define('MSG05', 'メールアドレスまたはパスワードが間違っています。');
-$loginFlg = isLogin();
 
+  //ログの出力変更用フラグ
 $debugFlg = 0;
 // ログを出力
 function debug($str) {
