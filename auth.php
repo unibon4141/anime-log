@@ -26,5 +26,5 @@ if(!empty($_SESSION['login_time'])){
   header('Location:login.php');
   }
 }
-aaaa
+
 ?>
