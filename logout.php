@@ -1,4 +1,5 @@
 <?php
+// ===================
 // ログアウト機能
 include('function.php');
 session_destroy();

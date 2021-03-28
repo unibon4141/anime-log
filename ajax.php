@@ -1,3 +1,4 @@
+<!-- ajax -->
 <?php
   include('function.php');
   if(!empty($_POST)){

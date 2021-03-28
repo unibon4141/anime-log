@@ -1,3 +1,4 @@
+// ajax
 $(function() {
 let $titleButton = $('.myanime-add');
 let title;

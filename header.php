@@ -20,6 +20,5 @@
           <li><a href="myanime.php">マイアニメ</a></li>
         </ul>
       </nav>
-    </div>
-    
+    </div><!-- container -->
   </header>
