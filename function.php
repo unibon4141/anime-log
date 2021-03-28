@@ -35,9 +35,11 @@ function debug($str) {
 
 // DBに接続
 function dbConnect(){
-  $dsn = 'mysql:host=localhost:3308;dbname=anime_log;charset=utf8';
-  $username = 'root';
-  $password = 'root';
+  $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
+  $db['dbname'] = ltrim($db['path'], '/');
+  $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
+  $username = $db['user'];
+  $password = $db['pass'];
   $options = array(
     // SQLの実行によりエラーが発生したときは例外を投げる
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -46,7 +48,6 @@ function dbConnect(){
     // エミュレートをオフにして静的プレースホルダを使う
     PDO::ATTR_EMULATE_PREPARES => false,
   );
-
   $dbh = new PDO($dsn, $username, $password, $options);
   return $dbh;
 }
