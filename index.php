@@ -65,7 +65,7 @@ if($month >= 1 && $month <4){
         ?>
         </p>
         
-        <button class="myanime-add <?php if($loginFlg === 1) echo 'anime-title'; ?>" data-title = "<?php echo $anime->title; ?>">
+        <button class="<?php if(isLogin()) echo 'myanime-add'; ?> <?php if($loginFlg === 1) echo 'anime-title'; ?>" data-title = "<?php echo $anime->title; ?>">
 マイアニメに登録する</button>
         </li>
         <?php
