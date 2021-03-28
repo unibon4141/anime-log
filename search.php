@@ -70,7 +70,7 @@ if(!empty($_POST)){
       ?>
       <li class="anime">
         <p class="anime-title"><?php echo $anime->title; ?></p>
-        <button class="myanime-add <?php if($loginFlg === 1) echo 'anime-title'; ?>" data-title = "<?php echo sanitize($anime->title); ?>">
+        <button class="myanime-add" data-title = "<?php echo sanitize($anime->title); ?>">
 マイアニメに登録する</button>
       </li>
       <?php
