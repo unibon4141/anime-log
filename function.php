@@ -7,7 +7,7 @@ ini_set('error_reporting', E_ALL);
 ini_set('error_log', './log/php.log');
 
 
-session_save_path("C:\\xampp\\tmp");
+
 ini_set('session.gc_maxlifetime', 60*60*24*30);
 ini_set('session.cookie_lifetime ', 60*60*24*30);
 
