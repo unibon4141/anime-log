@@ -13,6 +13,19 @@ if(!empty($_POST)){
   $api = 'http://api.moemoe.tokyo/anime/v1/master';
   $year = $_POST['year'];
   $season = $_POST['season'];
+  $season_word = '';
+  if(!empty($season)){
+    switch($season){
+      case 2:
+        $season_word = '春';
+      case 3:
+        $season_word  = '夏';
+      case 4:
+        $season_word = '秋';
+      case 1:
+        $season_word = '冬';
+    }
+  }
   $response = file_get_contents("$api/$year/$season");
 
   $animeList = json_decode($response);
@@ -42,7 +55,7 @@ if(!empty($_POST)){
     <div class="container">
   <h1>アニメを探す</h1>
   <form action="" method="post">
-    <select name="year" id="">
+    <select name="year">
       <?php
         for($i = $oldest_year; $i <= $current_year;$i++){
           ?>
@@ -62,7 +75,7 @@ if(!empty($_POST)){
   <?php 
   if(!empty($animeList)){
     ?>
-    <h2>検索結果</h2>
+    <h2>検索結果 : <?php if(!empty($year) && !empty($season)) echo $year.'年 '.$season_word.'アニメ'; ?></h2>
     <ul class="anime-list">
     <?php
     foreach($animeList as $anime){
