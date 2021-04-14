@@ -73,6 +73,7 @@ if(empty($errMsg)){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="image/favicon.png" sizes="16x16" type="image/png">
   <link rel="stylesheet" href="css/sign-up.css">
   <title>ユーザー登録</title>
 </head>
