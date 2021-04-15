@@ -4,6 +4,6 @@
 include('function.php');
 session_destroy();
 debug('ログアウトしました。');
-debug('ログインページへリダイレクトします');
-header('Location:login.php');
+debug('トップページへリダイレクトします');
+header('Location:index.php');
 ?>
