@@ -5,6 +5,14 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+@media screen and (max-width:768px) {
+  #main .container{
+    width:100%;
+  }
+  .anime{
+    width:45%;
+  }
+}
 h1, h3{
   color:	#804000;
 }
@@ -17,11 +25,17 @@ h1, h3{
   width: 23%;
   height:150px;
   margin: 8px;
-  float:left;
+  float:left; 
   background-color:#fff ;
   list-style:none;
   position:relative;
   padding: 10px;
+}
+@media screen and (max-width:768px) {
+
+  .anime{
+    width:45%;
+  }
 }
 
 .anime-title{
@@ -44,6 +58,12 @@ h1, h3{
   background-color: #fff;
   outline:none;
 }
+@media screen and (max-width:768px) {
+  .add-button{
+    left:70px
+  } 
+}
+
 .add-button:hover{
   color:#fff;
   background-color:	#ffaaaa;
