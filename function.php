@@ -38,21 +38,45 @@ function debug($str)
 // DBに接続
 function dbConnect()
 {
-  $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
-  $db['dbname'] = ltrim($db['path'], '/');
-  $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
-  $username = $db['user'];
-  $password = $db['pass'];
-  $options = array(
-    // SQLの実行によりエラーが発生したときは例外を投げる
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    // デフォルトフェッチモード(DBからデータを受け取るときの配列の形式）を連想配列形式にする 
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    // エミュレートをオフにして静的プレースホルダを使う
-    PDO::ATTR_EMULATE_PREPARES => false,
-  );
-  $dbh = new PDO($dsn, $username, $password, $options);
-  return $dbh;
+
+  if ($_SERVER['SERVER_NAME'] == 'localhost') {
+    require_once 'vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+
+    // 通常の環境変数を同じように下記のどの方法でも環境変数を呼び出せます
+    $host = $_ENV['DB_HOST'];
+    $username = $_ENV['DB_USER'];
+    $password = $_ENV['DB_PASS'];
+    $db_name = $_ENV['DB_NAME'];
+    $dsn = "mysql:host={$host};dbname={$db_name};charset=utf8";
+    $options = array(
+      // SQLの実行によりエラーが発生したときは例外を投げる
+      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+      // デフォルトフェッチモード(DBからデータを受け取るときの配列の形式）を連想配列形式にする 
+      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+      // エミュレートをオフにして静的プレースホルダを使う
+      PDO::ATTR_EMULATE_PREPARES => false,
+    );
+    $dbh = new PDO($dsn, $username, $password, $options);
+    return $dbh;
+  } else {
+    $db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
+    $db['dbname'] = ltrim($db['path'], '/');
+    $dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
+    $username = $db['user'];
+    $password = $db['pass'];
+    $options = array(
+      // SQLの実行によりエラーが発生したときは例外を投げる
+      PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+      // デフォルトフェッチモード(DBからデータを受け取るときの配列の形式）を連想配列形式にする 
+      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+      // エミュレートをオフにして静的プレースホルダを使う
+      PDO::ATTR_EMULATE_PREPARES => false,
+    );
+    $dbh = new PDO($dsn, $username, $password, $options);
+    return $dbh;
+  }
 }
 
 function queryPost($dbh, $sql, $data)
