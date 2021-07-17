@@ -1,10 +1,13 @@
-<!-- ajax -->
 <?php
 include('function.php');
+
 if (!empty($_POST)) {
+
   debug('POST: ' . print_r($_POST, true));
   $title = $_POST['title'];
+  $isLogined = 0;
   if ($loginFlg) {
+    $isLogined  = 1;
     try {
       $u_id = $_SESSION['user_id'];
       $dbh = dbConnect();
@@ -20,5 +23,8 @@ if (!empty($_POST)) {
       debug('エラー発生：' . $e->getMessage());
     }
   }
+  $result = array('value' => $isLogined);
+  header("Content-type: application/json; charset=utf-8");
+  echo json_encode($result);
+  exit;
 }
-?>

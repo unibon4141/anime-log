@@ -88,7 +88,9 @@ include('header.php');
         ?>
           <li class="anime">
             <p class="anime-title"><?php echo $anime->title; ?></p>
-            <button class="add-button <?php if ($loginFlg) echo 'myanime-add'; ?>" data-title="<?php echo sanitize($anime->title); ?>">
+            <button class="add-button <?php if ($loginFlg) {
+                                        echo 'myanime-add';
+                                      } else echo "not-login"; ?>" data-title="<?php echo $anime->title; ?>">
               マイアニメに追加</button>
           </li>
         <?php
