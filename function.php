@@ -26,6 +26,9 @@ define('MSG05', 'メールアドレスまたはパスワードが間違ってい
 
 //ログの出力変更用フラグ
 $debugFlg = 1;
+
+$loginFlg = isLogin();
+
 // ログを出力
 function debug($str)
 {
@@ -152,17 +155,17 @@ function isLogin()
     debug('ログイン済みのユーザーです');
     // ログイン有効期限（３０日）を超えていた場合
     if ($_SESSION['login_time'] + 60 * 60 * 24 * 30 < time()) {
-      $isLogin = 0;
+      $loginFlg = 0;
     } else {
       debug('ログイン有効期限内です');
       // ログイン日時を更新
-      $isLogin = 1;
+      $loginFlg = 1;
     }
   } else {
     debug('未ログインユーザーです');
-    $isLogin = 0;
+    $loginFlg = 0;
   }
-  return $isLogin;
+  return $loginFlg;
 }
 
 // サニタイズ

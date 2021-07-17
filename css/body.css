@@ -1,70 +1,66 @@
 /* 共通スタイル */
 
-#main{
-  background-color:	#fcf4ed;
+#main {
+  background-color: #fcf4ed;
   padding-top: 30px;
   padding-bottom: 30px;
 }
-@media screen and (max-width:768px) {
-  #main .container{
-    width:100%;
+@media screen and (max-width: 768px) {
+  #main .container {
+    width: 100%;
   }
-  .anime{
-    width:45%;
+  .anime {
+    width: 45%;
   }
 }
-h1, h3{
-  color:	#804000;
+h1,
+h3 {
+  color: #804000;
 }
-.anime-list{
+.anime-list {
   overflow: hidden;
 }
 
-.anime{
+.anime {
   box-sizing: border-box;
   width: 23%;
-  height:150px;
+  height: 150px;
   margin: 8px;
-  float:left; 
-  background-color:#fff ;
-  list-style:none;
-  position:relative;
+  float: left;
+  background-color: #fff;
+  list-style: none;
+  position: relative;
   padding: 10px;
 }
-@media screen and (max-width:768px) {
-
-  .anime{
-    width:45%;
+@media screen and (max-width: 768px) {
+  .anime {
+    width: 45%;
   }
 }
 
-.anime-title{
+.anime-title {
   overflow: hidden;
+  height: 50px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
-#main{
+#main {
   min-height: 800px;
 }
-.add-button{
+.add-button {
   display: block;
-  position:absolute;
-  bottom:20px;
-  left:30px;
-  border:3px solid #ffaaaa;
-  color:		#e27272;
-  padding:10px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 3px solid #ffaaaa;
+  color: #e27272;
+  padding: 10px;
   background-color: #fff;
-  outline:none;
-}
-@media screen and (max-width:768px) {
-  .add-button{
-    left:70px
-  } 
+  outline: none;
 }
 
-.add-button:hover{
-  color:#fff;
-  background-color:	#ffaaaa;
+.add-button:hover {
+  color: #fff;
+  background-color: #ffaaaa;
 }

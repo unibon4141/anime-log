@@ -1,87 +1,101 @@
 /* ヘッダー用css */
-body, div, p, h1, h2, ul {
+body,
+div,
+p,
+h1,
+h2,
+ul {
   padding: 0;
   margin: 0;
   text-align: center;
   line-height: 1.8;
- }
- header .container{
-   overflow:hidden;
+}
+header .container {
+  overflow: hidden;
   margin: 0 auto;
+}
 
- }
- .container{
-   width:960px;
-   margin: 0 auto;
- }
- .header-top{
-   overflow: hidden;
- }
-  img{
-    display:block;
-    width:100%;
-    height: auto;
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  /* 768pxまでの幅の場合に適応される */
+  .container {
+    width: 100%;
   }
-  .logo{
-    width:300px;
-    float:left;
+}
+.header-top {
+  overflow: hidden;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.logo {
+  width: 300px;
+  float: left;
+}
+@media screen and (max-width: 768px) {
+  /* 768pxまでの幅の場合に適応される */
+  .logo {
+    width: 30vw;
   }
+}
+.start {
+  overflow: hidden;
+  margin-top: 30px;
+  float: right;
+}
+.start-list {
+  overflow: hidden;
+}
+.start-list li {
+  float: left;
+  list-style: none;
+  margin-right: 10px;
+}
 
-  .start{
-    overflow: hidden;
-    margin-top:30px;
-    float:right;
-  }
-  .start-list{
-    overflow: hidden;
-  }
-  .start-list li{
-    float:left;
-    list-style:none;
-    margin-right: 10px;
+.start-list .hidden {
+  display: none;
+}
 
-  }
+.start-list li a {
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  border: 2px solid orange;
+  color: orange;
+}
+.start-list li a:hover {
+  background-color: orange;
+  color: #fff;
+}
+nav {
+  margin-right: auto;
+  margin-left: auto;
+}
+.header-nav-list {
+  overflow: hidden;
+}
+.header-nav-list li {
+  box-sizing: border-box;
 
-  .start-list .hidden{
-    display:none;
-  }
+  float: left;
+  list-style: none;
+  width: 33%;
+}
 
-  .start-list li a{
-    text-decoration: none;
-    display: block;
-    padding: 5px 10px;
-    border:2px solid orange;
-    color:orange;
-    
-  }
-  .start-list li a:hover{
-    background-color: orange;
-    color:#fff;
-  }
-  nav{
-    margin-right:auto;
-    margin-left: auto;
-  }
-  .header-nav-list{
-    overflow: hidden;
-  }
-  .header-nav-list li{
-    box-sizing: border-box;
+.header-nav-list li a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  background-color: #ff952b;
+}
 
-    float:left;
-    list-style:none;
-    width:33%;
-  }
-
-  .header-nav-list li a{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-decoration: none;
-    color:#fff ;
-    display: block;
-    background-color:		#ff952b;
-  }
-
-  .header-nav-list li:hover{
-    opacity: 0.7;
-  }
+.header-nav-list li:hover {
+  opacity: 0.7;
+}

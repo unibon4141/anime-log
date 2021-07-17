@@ -1,33 +1,41 @@
 /* マイアニメページ用 */
-.myanime-item{
+.anime-list {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.myanime-item {
   box-sizing: border-box;
   width: 23%;
-  height:150px;
+  height: 150px;
   margin: 8px;
-  float:left;
-  background-color:#fff ;
-  list-style:none;
-  position:relative;
+  float: left;
+  background-color: #fff;
+  list-style: none;
+  position: relative;
   padding: 10px;
-  position:relative;
+  position: relative;
 }
-
-.status-form{
-  position:absolute;
-  bottom:20px;
-  left:35px;
+@media screen and (max-width: 768px) {
+  .myanime-item {
+    width: 45%;
+  }
 }
 
 .status-form select {
-  color:	#ffaa55;
-  border:1px solid 	#ffaa55;
+  display: block;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #ffaa55;
+  border: 1px solid #ffaa55;
 }
-
-.status-form input[type="submit"]{
-  color:	#ffaa55;
-  border:1px solid	#ffaa55;
-  background:	#fff;
+.delete-btn {
+  display: block;
+  padding: 2px 6px;
+  margin-top: 8%;
+  margin-left: 70%;
+  background: #ff8080;
+  color: #fff;
+  border: none;
 }
-
-
-
