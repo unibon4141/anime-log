@@ -76,7 +76,6 @@ try {
   <link rel="stylesheet" href="css/body.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/myanime.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <title>マイアニメ</title>
 </head>
 <?php

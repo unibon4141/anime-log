@@ -50,6 +50,7 @@ if (!empty($_POST)) {
   <link rel="stylesheet" href="css/body.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <title>アニメ検索</title>
 </head>
@@ -75,7 +76,7 @@ include('header.php');
         <option value="4" <?php if (!empty($season) && $season == 4) echo "selected" ?>>秋アニメ</option>
         <option value="1" <?php if (!empty($season) && $season == 1) echo "selected" ?>>冬アニメ</option>
       </select>
-      <input type="submit" value="検索">
+      <input class="fas search-btn" type="submit" value="&#xf002; 検索">
     </form>
     <?php
     if (!empty($animeList)) {

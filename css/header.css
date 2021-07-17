@@ -51,6 +51,12 @@ img {
 .start-list {
   overflow: hidden;
 }
+@media screen and (max-width: 768px) {
+  /* 768pxまでの幅の場合に適応される */
+  .start-list {
+    margin-bottom: 10px;
+  }
+}
 .start-list li {
   float: left;
   list-style: none;
