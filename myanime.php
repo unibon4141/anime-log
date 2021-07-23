@@ -8,10 +8,9 @@ debug('マイアニメページ');
 include('auth.php');
 $user_id = "";
 $myanime_list = array();
-if (!empty($_SESSION['login_date'])) {
+if (!empty($_SESSION['login_time'])) {
   $user_id = $_SESSION['user_id'];
 }
-
 
 if (!empty($_POST)) {
   debug('POST送信があります。');
