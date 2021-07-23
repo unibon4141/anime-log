@@ -6,9 +6,12 @@ include('function.php');
 debug('マイアニメページ');
 // ログイン認証
 include('auth.php');
-
-$user_id = $_SESSION['user_id'];
+$user_id = "";
 $myanime_list = array();
+if (!empty($_SESSION['login_date'])) {
+  $user_id = $_SESSION['user_id'];
+}
+
 
 if (!empty($_POST)) {
   debug('POST送信があります。');
