@@ -68,6 +68,18 @@ if (!empty($_POST)) {
   <link rel="icon" href="image/favicon.png" sizes="16x16" type="image/png">
   <link rel="stylesheet" href="css/login.css">
   <title>ログインページ</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4NZNSFXJZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-E4NZNSFXJZ');
+  </script>
 </head>
 
 <body>
