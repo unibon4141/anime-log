@@ -89,7 +89,7 @@ if (!empty($_POST)) {
     </div>
   </header>
   <main id="id">
-    <h2>ログイン</h2>
+    <h2 class="page-title">ログイン</h2>
     <form action="" method="post">
       <label>メールアドレス</label>
       <input type="text" name="email"><br>

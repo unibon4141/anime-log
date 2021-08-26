@@ -55,7 +55,7 @@ include('header.php');
 ?>
 <main id="main">
   <div class="container">
-    <h1><?php echo $year . '年' . $shown_season . 'アニメ一覧'; ?></h1>
+    <h1 class="page-title"><?php echo $year . '年' . $shown_season . 'アニメ一覧'; ?></h1>
     <?php
     $api = 'http://api.moemoe.tokyo/anime/v1/master';
 

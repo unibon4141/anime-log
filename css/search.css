@@ -11,3 +11,6 @@ select {
   height: 30px;
   border: 1px solid black;
 }
+.search-result-title {
+  font-weight: 500;
+}

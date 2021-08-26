@@ -98,7 +98,7 @@ include('header.php');
 ?>
 <main id="main">
   <div class="container">
-    <h1>マイアニメ</h1>
+    <h1 class="page-title">マイアニメ</h1>
     <ul class="anime-list">
       <?php
       foreach ($myanime_list as $myanime) {

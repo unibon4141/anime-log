@@ -17,6 +17,9 @@ h1,
 h3 {
   color: #804000;
 }
+.page-title {
+  font-weight: 500;
+}
 .anime-list {
   overflow: hidden;
 }
@@ -49,18 +52,22 @@ h3 {
   min-height: 800px;
 }
 .add-button {
+  transition: all 0.2s;
   display: block;
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
   border: 3px solid #ffaaaa;
-  color: #e27272;
+  color: #ffaaaa;
+  font-weight: bold;
   padding: 10px;
   background-color: #fff;
   outline: none;
+  user-select: none;
 }
 
 .add-button:hover {
+  transition: all 0.2s;
   color: #fff;
   background-color: #ffaaaa;
 }

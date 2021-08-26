@@ -51,6 +51,19 @@ img {
 .start-list {
   overflow: hidden;
 }
+.nav-btn {
+  transition: all 0.2s;
+}
+.nav-btn :hover {
+  transition: all 0.2s;
+}
+.page-btn {
+  transition: all 0.2s;
+}
+.page-btn:hover {
+  opacity: 0.7;
+  transition: all 0.2s;
+}
 @media screen and (max-width: 768px) {
   /* 768pxまでの幅の場合に適応される */
   .start-list {
@@ -93,15 +106,12 @@ nav {
   width: 33%;
 }
 
-.header-nav-list li a {
+.header-nav-list .page-btn {
   padding-top: 10px;
   padding-bottom: 10px;
   text-decoration: none;
   color: #fff;
+  font-weight: 600;
   display: block;
   background-color: #ff952b;
-}
-
-.header-nav-list li:hover {
-  opacity: 0.7;
 }

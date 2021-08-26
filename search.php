@@ -71,7 +71,7 @@ include('header.php');
 ?>
 <main id="main">
   <div class="container">
-    <h1>アニメを探す</h1>
+    <h1 class="page-title">アニメを探す</h1>
     <form action="" method="post">
       <select name="year">
         <?php
@@ -93,7 +93,7 @@ include('header.php');
     <?php
     if (!empty($animeList)) {
     ?>
-      <h2>検索結果 : <?php if (!empty($year) && !empty($season)) echo $year . '年 ' . $season_word . 'アニメ'; ?></h2>
+      <h2 class="search-result-title">検索結果 : <?php if (!empty($year) && !empty($season)) echo $year . '年 ' . $season_word . 'アニメ'; ?></h2>
       <ul class="anime-list">
         <?php
         foreach ($animeList as $anime) {
