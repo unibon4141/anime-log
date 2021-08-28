@@ -67,7 +67,7 @@ if (!empty($_POST)) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="image/favicon.png" sizes="16x16" type="image/png">
   <link rel="stylesheet" href="css/login.css">
-  <title>ログインページ</title>
+  <title>ログイン</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4NZNSFXJZ"></script>
   <script>
@@ -84,22 +84,29 @@ if (!empty($_POST)) {
 
 <body>
   <header>
-    <div class="logo">
-      <img src="image/logo.jpg" alt="ロゴ">
+    <div class="logo-login-image">
+      <img src="image/logo_transparent.png" alt="ロゴ">
     </div>
   </header>
   <main id="id">
-    <h2 class="page-title">ログイン</h2>
-    <form action="" method="post">
-      <label>メールアドレス</label>
-      <input type="text" name="email"><br>
-      <p class="error-msg"><?php if (!empty($errMsg['email'])) echo '※' . $errMsg['email']; ?></p>
-      <label>パスワード</label>
-      <input type="password" name="pass"><br>
-      <p class="error-msg"><?php if (!empty($errMsg['pass'])) echo '※' . $errMsg['pass']; ?></p>
-      <input type="submit" value="ログイン">
-    </form>
-    <a href="index.php">トップページへ戻る</a>
+
+    <div class="login-form-over-wrap">
+      <div class="login-form-wrap">
+        <div class="login-form-content">
+          <h2 class="page-title">ログイン</h2>
+          <form action="" method="post">
+            <span class="form-item-name"><label>メールアドレス</label></span>
+            <input class="login-form-item" type="text" name="email">
+            <p class="error-msg"><?php if (!empty($errMsg['email'])) echo '※' . $errMsg['email']; ?></p>
+            <span class="form-item-name"><label>パスワード</label></span>
+            <input class="login-form-item" type="password" name="pass">
+            <p class="error-msg"><?php if (!empty($errMsg['pass'])) echo '※' . $errMsg['pass']; ?></p>
+            <input class="login-btn" type="submit" value="ログイン">
+          </form>
+        </div>
+      </div>
+      <a class="link-top-page" href="index.php">トップページへ戻る</a>
+    </div>
   </main>
 </body>
 
