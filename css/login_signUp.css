@@ -80,6 +80,13 @@ img {
   width: 100%;
   background: #ff952b;
   color: #fff;
+  transition: all 0.2s;
+}
+
+.login-btn:hover,
+.sign-up-btn:hover {
+  transition: all 0.2s;
+  opacity: 0.8;
 }
 .error-msg {
   color: #ff0000;
@@ -89,4 +96,7 @@ img {
   margin-top: 5%;
   display: block;
   text-align: start;
+}
+.link-top-page:hover {
+  text-decoration: none;
 }
