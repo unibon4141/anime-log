@@ -66,7 +66,7 @@ if (!empty($_POST)) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="image/favicon.png" sizes="16x16" type="image/png">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/login_signUp.css">
   <title>ログイン</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4NZNSFXJZ"></script>
@@ -84,7 +84,7 @@ if (!empty($_POST)) {
 
 <body>
   <header>
-    <div class="logo-login-image">
+    <div class="logo-image">
       <img src="image/logo_transparent.png" alt="ロゴ">
     </div>
   </header>
