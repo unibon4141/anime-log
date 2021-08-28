@@ -49,8 +49,10 @@ img {
   padding-bottom: 5%;
 }
 .page-title {
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
   padding: 10px;
+  color: #804000;
 }
 .form-item-name {
   text-align: start;
