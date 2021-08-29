@@ -82,7 +82,7 @@ if (!empty($_POST)) {
 <body>
   <header>
     <div class="logo-image">
-      <img src="image/logo_transparent.png" alt="ロゴ">
+      <img src="image/logo_small.png" alt="ロゴ">
     </div>
   </header>
   <main>
