@@ -59,7 +59,6 @@ img {
   width: 150px;
   display: block;
 }
-
 .login-form-item,
 .sign-up-form-item {
   box-sizing: border-box;
@@ -73,6 +72,10 @@ img {
   margin-bottom: 20px;
 }
 
+.login-form-item:focus,
+.sign-up-form-item:focus {
+  outline: solid 1px #ff952b;
+}
 .login-btn,
 .sign-up-btn {
   border: none;
@@ -93,7 +96,6 @@ img {
 .login-btn:hover,
 .sign-up-btn:hover {
   transition: all 0.2s;
-  opacity: 0.9;
   box-shadow: 3px 5px 15px #c9c9c9;
   transform: translateY(-2px);
 }
