@@ -6,11 +6,23 @@ select {
   height: 30px;
 }
 
-.search-btn {
-  background-color: #fff;
-  height: 30px;
-  border: 1px solid black;
-}
 .search-result-title {
   font-weight: 500;
+}
+.form-season,
+.form-year,
+.search-btn {
+  color: #353535;
+  border: none;
+}
+.form-season,
+.form-year {
+  width: 20%;
+}
+.search-btn {
+  background-color: #fff;
+  width: 10%;
+  height: 30px;
+}
+.search-btn:hover {
 }

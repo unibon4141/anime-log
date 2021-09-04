@@ -13,6 +13,9 @@ if (!empty($_POST)) {
   $api = 'http://api.moemoe.tokyo/anime/v1/master';
   $year = $_POST['year'];
   $season = $_POST['season'];
+  if (empty($year) || empty($season)) {
+    header("Location:search.php");
+  }
   $season_word = '';
   if (!empty($season)) {
     switch ($season) {
@@ -50,7 +53,6 @@ if (!empty($_POST)) {
   <link rel="stylesheet" href="css/body.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/search.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <title>アニメを検索</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -73,7 +75,8 @@ include('header.php');
   <div class="container">
     <h1 class="page-title">アニメを探す</h1>
     <form action="" method="post">
-      <select name="year">
+      <select name="year" class="form-year">
+        <option value="" selected="selected">年を選択</option>
         <?php
         for ($i = $oldest_year; $i <= $current_year; $i++) {
         ?>
@@ -82,13 +85,14 @@ include('header.php');
         }
         ?>
       </select>
-      <select name="season" id="">
+      <select name="season" class="form-season">
+        <option value="" selected="selected">季節を選択</option>
         <option value="2" <?php if (!empty($season) && $season == 2) echo "selected" ?>>春アニメ</option>
         <option value="3" <?php if (!empty($season) && $season == 3) echo "selected" ?>>夏アニメ</option>
         <option value="4" <?php if (!empty($season) && $season == 4) echo "selected" ?>>秋アニメ</option>
         <option value="1" <?php if (!empty($season) && $season == 1) echo "selected" ?>>冬アニメ</option>
       </select>
-      <input class="fas search-btn" type="submit" value="&#xf002; 検索">
+      <input class="search-btn" type="submit" value="検索">
     </form>
     <?php
     if (!empty($animeList)) {
