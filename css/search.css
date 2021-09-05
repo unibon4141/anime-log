@@ -24,5 +24,13 @@ select {
   width: 10%;
   height: 30px;
 }
-.search-btn:hover {
+@media screen and (max-width: 768px) {
+  .form-season,
+  .form-year {
+    width: 30%;
+  }
+  .search-btn {
+    background-color: #fff;
+    width: 20%;
+  }
 }
