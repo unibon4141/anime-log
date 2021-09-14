@@ -3,6 +3,9 @@
 // アニメ検索ページ
 // ==========================
 include('function.php');
+
+define('SEARCH_ERR_MSG01', '');
+
 debug('アニメ検索ページ');
 $current_year = date('Y');
 $oldest_year = 2014;
@@ -114,6 +117,11 @@ include('header.php');
         ?>
       </ul>
     <?php
+    } else if (!empty($_POST)) {
+    ?>
+      <p class="search-err-msg">検索した期間のアニメ情報はまだ登録されていないようです！<br>しばらく時間をおいてもう一度検索してみてください。</p>
+    <?php
+      debug("検索した期間に該当するアニメはありませんでした。");
     }
     ?>
   </div>
