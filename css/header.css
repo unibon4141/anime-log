@@ -4,7 +4,9 @@ div,
 p,
 h1,
 h2,
-ul {
+ul,
+nav,
+li {
   padding: 0;
   margin: 0;
   text-align: center;
@@ -82,28 +84,27 @@ img {
 
 .start-list li a {
   text-decoration: none;
+  font-weight: 600;
   display: block;
-  padding: 5px 10px;
-  border: 2px solid orange;
-  color: orange;
+  padding: 5px 15px;
+  border: 2px solid #ff952b;
+  color: #ff952b;
 }
 .start-list li a:hover {
-  background-color: orange;
+  background-color: #ff952b;
   color: #fff;
 }
-nav {
-  margin-right: auto;
-  margin-left: auto;
-}
+
 .header-nav-list {
   overflow: hidden;
 }
 .header-nav-list li {
   box-sizing: border-box;
-
   float: left;
   list-style: none;
-  width: 33%;
+  width: 33.33333%;
+  width: -webkit-calc(100% / 3);
+  width: calc(100% / 3);
 }
 
 .header-nav-list .page-btn {

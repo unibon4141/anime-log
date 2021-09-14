@@ -20,5 +20,5 @@
           <li><a class="page-btn" href="myanime.php">マイアニメ</a></li>
         </ul>
       </nav>
-    </div><!-- container -->
+    </div>
   </header>
