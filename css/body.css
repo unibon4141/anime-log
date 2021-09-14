@@ -70,4 +70,5 @@ h3 {
   transition: all 0.2s;
   color: #fff;
   background-color: #ffaaaa;
+  cursor: pointer;
 }
