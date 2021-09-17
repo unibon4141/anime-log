@@ -108,7 +108,7 @@ include('header.php');
           <form action="" method="post" class="status-form">
             <input type="hidden" name="form-type" value="status">
             <input type="hidden" name="anime-id" value="<?php echo $myanime['id']; ?>">
-            <select name="watch-status" id="" onchange="submit(this.form)">
+            <select name="watch-status" class="watch-status" id="" onchange="submit(this.form)">
               <option hidden>選択してください</option>
               <option value="2" <?php if ($myanime['status'] === 2) echo 'selected'; ?>>見たい</option>
               <option value="3" <?php if ($myanime['status'] === 3) echo 'selected'; ?>>見ている</option>

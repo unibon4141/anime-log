@@ -55,6 +55,7 @@
   }
   .search-btn {
     width: 80%;
+    opacity: 1;
   }
 }
 .search-err-msg {
