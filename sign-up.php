@@ -99,6 +99,8 @@ if (!empty($_POST)) {
             <p class="error-msg"><?php if (!empty($errMsg['pass'])) echo '※' . $errMsg['pass']; ?></p>
             <input class="sign-up-btn" type="submit" value="登録">
           </form>
+          <p class="other-option-msg">または</p>
+          <a class="other-option-link" href="login.php">ログイン</a>
         </div>
       </div>
       <a class="link-top-page" href="index.php">トップページへ戻る</a>

@@ -3,7 +3,7 @@
 // アニメ検索ページ
 // ==========================
 include('function.php');
-
+$_SESSION['visitted_page'] = 'search';
 define('SEARCH_ERR_MSG01', '');
 
 debug('アニメ検索ページ');

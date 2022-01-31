@@ -3,7 +3,7 @@
 // 今期のアニメ一覧ページ(トップページ)
 // ==========================
 include('function.php');
-
+$_SESSION['visitted_page'] = 'index';
 $year = date('Y');
 $month = date('n');
 $shown_season = '';

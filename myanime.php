@@ -11,7 +11,7 @@ $myanime_list = array();
 if (!empty($_SESSION['login_time'])) {
   $user_id = $_SESSION['user_id'];
 }
-
+$_SESSION['visitted_page'] = 'myanime';
 if (!empty($_POST)) {
   debug('POST送信があります。');
   debug('POST内容：' . print_r($_POST, true));
@@ -78,6 +78,7 @@ try {
   <link rel="stylesheet" href="css/body.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/myanime.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <title>マイアニメ</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -118,7 +119,8 @@ include('header.php');
           <form action="" method="post">
             <input type="hidden" name="form-type" value="delete">
             <input type="hidden" name="anime-id" value="<?php echo $myanime['id']; ?>">
-            <input class="delete-btn" type="submit" value="削除">
+            <!-- <input class="delete-btn" type="submit" value="削除"> -->
+            <button class="delete-btn" type="submit"><i class="far fa-trash-alt"></i></button>
           </form>
         </li>
       <?php

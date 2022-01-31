@@ -27,7 +27,7 @@
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
-  color: #ffaa55;
+  color: #ff8000;
   border: 1px solid #ffaa55;
 }
 .watch-status {
@@ -38,10 +38,13 @@
 }
 .delete-btn {
   display: block;
-  padding: 2px 6px;
+  padding: 4px 8px;
   margin-top: 8%;
   margin-left: 70%;
   background: #ff8080;
   color: #fff;
   border: none;
+}
+.delete-btn:hover {
+  cursor: pointer;
 }

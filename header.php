@@ -15,9 +15,9 @@
       </div>
       <nav>
         <ul class="header-nav-list">
-          <li><a class="page-btn" href="index.php">今期のアニメ</a></li>
-          <li><a class="page-btn" href="search.php">アニメを探す</a></li>
-          <li><a class="page-btn" href="myanime.php">マイアニメ</a></li>
+          <li><a class="page-btn <?php if ($_SESSION['visitted_page'] == 'index') echo 'visitted' ?>" href="index.php">今期のアニメ</a></li>
+          <li><a class="page-btn <?php if ($_SESSION['visitted_page'] == 'search') echo 'visitted' ?>" href="search.php">アニメを探す</a></li>
+          <li><a class="page-btn <?php if ($_SESSION['visitted_page'] == 'myanime') echo 'visitted' ?>" href="myanime.php">マイアニメ</a></li>
         </ul>
       </nav>
     </div>

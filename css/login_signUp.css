@@ -50,9 +50,9 @@ img {
 }
 .page-title {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 10px;
-  color: #804000;
+  color: #555555;
 }
 .form-item-name {
   text-align: start;
@@ -117,4 +117,17 @@ img {
 }
 .link-top-page:hover {
   text-decoration: none;
+}
+.other-option-msg {
+  margin-top: 10px;
+}
+.other-option-link {
+  color: #ff8000;
+}
+
+.other-option-link:visitted {
+  color: #ff8000;
+}
+.other-option-link:active {
+  color: #aa5500;
 }
