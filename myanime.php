@@ -36,7 +36,6 @@ if (!empty($_POST)) {
     $anime_id = $_POST['anime-id'];
     debug($anime_id);
     try {
-      // DB接続
       $dbh = dbConnect();
       $sql = 'UPDATE anime SET delete_flg = 1 WHERE id = :id AND delete_flg = 0';
       $data = array(

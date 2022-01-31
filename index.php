@@ -22,6 +22,8 @@ if ($month >= 1 && $month < 4) {
   $season = 4;
   $shown_season = '秋';
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
