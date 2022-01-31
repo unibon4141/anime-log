@@ -99,7 +99,6 @@ include('header.php');
 ?>
 <main id="main">
   <div class="container">
-    <h1 class="page-title">マイアニメ</h1>
     <ul class="anime-list">
       <?php
       foreach ($myanime_list as $myanime) {
@@ -127,6 +126,15 @@ include('header.php');
       }
       ?>
     </ul>
+    <?php
+    if (empty($myanime)) {
+    ?>
+      <p class="no-myanime">まだマイアニメを追加していません！<br />
+        トップページからアニメを追加してみましょう！
+      </p>
+    <?php
+    }
+    ?>
   </div>
 </main>
 <?php

@@ -25,7 +25,7 @@ define('MSG04', '既に使用されているメールアドレスです。');
 define('MSG05', 'メールアドレスまたはパスワードが間違っています。');
 
 //ログの出力変更用フラグ
-$debugFlg = 1;
+$debugFlg = 0;
 
 $loginFlg = isLogin();
 

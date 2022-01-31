@@ -48,3 +48,12 @@
 .delete-btn:hover {
   cursor: pointer;
 }
+.no-myanime {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: #fdfaf7;
+  font-size: 17px;
+  color: #3f3f3f;
+}

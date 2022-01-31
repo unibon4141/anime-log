@@ -76,7 +76,6 @@ include('header.php');
 ?>
 <main id="main">
   <div class="container">
-    <h1 class="page-title">アニメを探す</h1>
     <form action="" method="post">
       <select name="year" class="form-year">
         <option value="" selected="selected">年を選択</option>
